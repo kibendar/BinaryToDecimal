@@ -1,0 +1,8 @@
+com/example/interfaces/Convertor.class
+com/example/validators/Bin2DecValidator.class
+com/example/services/Bin2DecConvertor.class
+com/example/services/Bin2DecInput.class
+com/example/services/Bin2DecService.class
+com/example/interfaces/Input.class
+com/example/Bin2DecApp.class
+com/example/interfaces/Validator.class
