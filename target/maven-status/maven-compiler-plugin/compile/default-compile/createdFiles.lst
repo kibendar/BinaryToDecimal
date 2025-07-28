@@ -1,3 +1,4 @@
+com/example/utils/DependencyContainer.class
 com/example/interfaces/Convertor.class
 com/example/validators/Bin2DecValidator.class
 com/example/services/Bin2DecConvertor.class

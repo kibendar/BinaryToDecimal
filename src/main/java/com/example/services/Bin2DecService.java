@@ -16,31 +16,39 @@ public class Bin2DecService {
     this.validator = validator;
   }
 
-  public void run() {
+  private void whileInvalidInput() {
+    try (Input ipnut = input) {
 
-    String binary;
+      String binary;
 
-    try {
       while (true) {
-
         binary = input.getInput();
 
         if (validator.validate(binary)) {
-          System.out.printf("The result is: %d", convertor.convert(binary));
+
+          throwResult(convertor.convert(binary));
 
           break;
         } else {
-          System.out.printf("\nInvalid input: %s"
-                                + "\nYour binary should:"
-                                + "\n- have length of 8"
-                                + "\n- contain only 0 and 1"
-                                + "\nTry again.\n",
-                            binary);
+
+          throwError(binary);
         }
       }
-    } finally {
-      if (input instanceof Bin2DecInput)
-        ((Bin2DecInput)input).closeScanner();
     }
   }
+
+  private void throwResult(int result) {
+    System.out.printf("\nThe result is: %d", result);
+  }
+
+  private void throwError(String invalidInput) {
+    System.out.printf("\nInvalid input: %s"
+                          + "\nYour binary should:"
+                          + "\n- have length of 8"
+                          + "\n- contain only 0 and 1\n"
+                          + "\nTry again.\n",
+                      invalidInput);
+  }
+
+  public void runService() { whileInvalidInput(); }
 }

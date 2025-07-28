@@ -12,12 +12,13 @@ public class Bin2DecInput implements Input {
   @Override
   public String getInput() {
 
-    System.out.println("Enter binary number: ");
+    System.out.print("Enter binary number: ");
 
-    Scanner scan = new Scanner(System.in);
-
-    return scan.nextLine();
+    return scan.next();
   }
 
-  public void closeScanner() { scan.close(); }
+  @Override
+  public void close() {
+    scan.close();
+  }
 }
