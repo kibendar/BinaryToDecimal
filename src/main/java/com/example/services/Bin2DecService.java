@@ -42,7 +42,7 @@ public class Bin2DecService {
   }
 
   private void throwResult(int result) {
-    System.out.printf(GREEN + "\nThe result is: %d" + RESET, result);
+    System.out.printf(GREEN + "\nThe result is: %d\n" + RESET, result);
   }
 
   private void throwError(String invalidInput) {
